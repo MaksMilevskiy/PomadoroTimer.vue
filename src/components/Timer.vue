@@ -3,7 +3,7 @@
     <div class="wrapper">
       <div class="timer_wrapper">
         <div class="message">{{ message }}</div>
-        <div class="timer" v-if="timeLeft">{{ minutes }}: {{ seconds }}</div>
+        <div class="timer" v-if="timeLeft">{{ minutes }}:{{ seconds }}</div>
       </div>
       <div class="buttons">
         <button v-if="isTimerActive" @click="reset">Скинути таймер</button>
