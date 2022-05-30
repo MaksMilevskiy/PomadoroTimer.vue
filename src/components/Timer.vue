@@ -15,7 +15,14 @@
 </template>
 
 <script setup>
-import { ref, computed, watchEffect, watch, onMounted, onBeforeUnmount } from "vue";
+import {
+  ref,
+  computed,
+  watchEffect,
+  watch,
+  onMounted,
+  onBeforeUnmount,
+} from "vue";
 import { useTimerStore } from "../stores/timer";
 
 const store = useTimerStore();
@@ -73,23 +80,26 @@ watch(period, (period) => {
   }
 });
 
-watch(() => store.workingHours, (hours) => {
-  if (hours > 0) {
-    setTimeout(() => {
-      startTimer();
-    }, 1000);
-  } else {
-    message.value = "На сьогодні все :)"
+watch(
+  () => store.workingHours,
+  (hours) => {
+    if (hours > 0) {
+      setTimeout(() => {
+        startTimer();
+      }, 1000);
+    } else {
+      message.value = "На сьогодні все :)";
+    }
   }
-});
+);
 
 onMounted(() => {
   document.body.style = "background-image: none";
 });
 
 onBeforeUnmount(() => {
-  document.body.style = 'background-image: url(images/"tomatoes_bg.jpg")'
-})
+  document.body.style = 'background-image: url(images/"tomatoes_bg.jpg")';
+});
 </script>
 
 <style scoped>

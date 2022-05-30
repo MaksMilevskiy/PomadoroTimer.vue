@@ -9,7 +9,7 @@
 <style>
 * {
     margin: 0;
-    font-size: 10px;
+    font-size: 62.5%;
     box-sizing: border-box;
 }
 
